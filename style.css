@@ -53,3 +53,9 @@ html[data-theme="dark"] .partnership-form input::placeholder,html[data-theme="da
 html[data-theme="dark"] .comments-section{border-color:#302e3d}
 html[data-theme="dark"] .comments-heading p,html[data-theme="dark"] .comments-section noscript{color:#aaa8bb}
 @media(max-width:700px){.comments-section{margin-bottom:28px;padding:26px 2px}.comments-heading h2{font-size:21px}}
+.comments-jump{display:inline-flex;align-items:center;gap:7px;margin:16px 0 0 8px;color:#746be5;font-size:12px;font-weight:700;text-decoration:none}
+.comments-jump span{font-size:15px;transition:transform .18s}
+.comments-jump:hover{text-decoration:underline}
+.comments-jump:hover span{transform:translateY(2px)}
+html[data-theme="dark"] .comments-jump{color:#aaa2ff}
+@media(max-width:700px){.comments-jump{margin:13px 0 0 5px;font-size:11px}}
