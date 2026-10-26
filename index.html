@@ -52,10 +52,28 @@
         <div class="tip-icon">💬</div><div><strong>대화가 어색할 땐</strong><p>오늘의 대화 주제로<br>자연스럽게 시작해보세요.</p></div>
       </aside>
     </main>
-    <footer><span>© 2026 두런두런</span><span><button id="safety-button">안전한 대화 안내</button><b>·</b><button id="privacy-button">개인정보 안내</button></span></footer>
+    <footer><span>© 2026 두런두런</span><span><button id="partnership-button" type="button">제휴 문의</button><b>·</b><button id="safety-button">안전한 대화 안내</button><b>·</b><button id="privacy-button">개인정보 안내</button></span></footer>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <dialog id="info-dialog"><button class="dialog-close" aria-label="닫기">×</button><div class="dialog-icon">🫶</div><h2 id="dialog-title">안전한 대화 안내</h2><p id="dialog-copy">개인정보나 연락처, 금융 정보를 공유하지 마세요. 불편한 대화는 언제든지 나가거나 신고할 수 있어요. 서로 존중하는 대화를 함께 만들어가요.</p><button class="dialog-ok">알겠어요</button></dialog>
-  <script src="main.js"></script>
+  <dialog id="partnership-dialog" aria-labelledby="partnership-title">
+    <button class="dialog-close partnership-close" type="button" aria-label="닫기">×</button>
+    <div class="dialog-icon">🤝</div>
+    <h2 id="partnership-title">제휴 문의</h2>
+    <p class="partnership-intro">두런두런과의 제휴를 제안해 주세요. 남겨주신 내용은 제휴 검토를 위해 전달됩니다.</p>
+    <form class="partnership-form" action="https://formspree.io/f/mzeeezrb" method="POST" target="_blank">
+      <input type="hidden" name="_subject" value="[두런두런] 새로운 제휴 문의">
+      <label for="partner-name">이름</label>
+      <input id="partner-name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="홍길동" required>
+      <label for="partner-email">이메일</label>
+      <input id="partner-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required>
+      <label for="partner-company">회사 또는 서비스명 <span>(선택)</span></label>
+      <input id="partner-company" name="company" type="text" autocomplete="organization" maxlength="120" placeholder="회사/서비스 이름">
+      <label for="partner-message">제휴 내용</label>
+      <textarea id="partner-message" name="message" rows="4" maxlength="3000" placeholder="제휴 제안 내용을 적어주세요." required></textarea>
+      <button class="partnership-submit" type="submit">문의 보내기 <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="partnership-privacy">입력한 정보는 제휴 문의 확인과 회신에 사용됩니다.</p>
+  </dialog>  <script src="main.js"></script>
 </body>
 </html>
