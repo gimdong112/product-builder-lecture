@@ -3,91 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f4ff">
+  <meta name="theme-color" content="#f6f4ef">
   <meta name="google-adsense-account" content="ca-pub-2772480627797424">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2772480627797424"
-    crossorigin="anonymous"></script>
-  <title>두런두런 — 랜덤 채팅</title>
+  <meta name="description" content="처음 만난 사람과의 대화, 경청, 감사와 거절의 표현을 일상에서 써 볼 수 있는 예시와 함께 안내합니다.">
+  <link rel="canonical" href="https://product-builder-lecture-69r.pages.dev/">
+  <title>말의 여백 — 더 편안하게 말하고, 깊게 듣는 연습</title>
   <link rel="stylesheet" href="style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2772480627797424" crossorigin="anonymous"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="#" aria-label="두런두런 홈"><span class="brand-mark">두</span><span>두런두런</span></a>
-      <div class="online"><i></i><span id="online-count">오늘도 누군가 기다리고 있어요</span></div>
-      <div class="header-actions"><button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드로 전환" title="다크 모드로 전환"><span aria-hidden="true">☾</span></button><button class="icon-button" id="help-button" aria-label="안내 보기">?</button></div>
-    </header>
-
-    <main class="layout">
-      <section class="intro">
-        <div class="eyebrow"><span class="sparkle">✦</span> 낯선 사람과 가볍게 나누는 대화</div>
-        <h1>오늘, 누구와<br><em>두런두런</em> 이야기할까요?</h1>
-        <p>관심사가 비슷한 새로운 친구를 만나보세요.<br>부담 없이 인사부터 시작해도 괜찮아요.</p>
-        <div class="safe-note"><span>♡</span> 서로를 존중하는 대화를 부탁드려요</div>
-        <a class="comments-jump" href="#comments">댓글로 이야기 나누기 <span aria-hidden="true">↓</span></a>
-      </section>
-
-      <section class="chat-card" aria-label="랜덤 채팅">
-        <div class="chat-head">
-          <div class="partner">
-            <div class="avatar" id="avatar">☁️</div>
-            <div><strong id="partner-name">새로운 인연</strong><small id="partner-status">아직 연결되지 않았어요</small></div>
-          </div>
-          <button class="more-button" id="report-button" aria-label="신고 또는 차단" title="신고 / 차단">•••</button>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header class="site-header">
+    <div class="site-wrap header-inner">
+      <a class="brand" href="index.html" aria-label="말의 여백 홈"><span class="brand-mark">말</span><span>말의 여백</span></a>
+      <nav class="site-nav" aria-label="주요 메뉴">
+        <a href="#guides">대화 가이드</a>
+        <a href="#question-tool">오늘의 질문</a>
+        <a href="about.html">사이트 소개</a>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드로 전환" title="다크 모드로 전환">☾</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero site-wrap">
+      <div class="hero-copy">
+        <p class="eyebrow">일상 대화 안내서</p>
+        <h1>조금 더 편안하게 말하고,<br><em>한 번 더 잘 들어보기.</em></h1>
+        <p class="hero-lede">대화가 막막한 순간에 꺼내 쓸 수 있는 질문과 표현을 모았습니다. 정답을 외우기보다, 내 말투와 상황에 맞는 방법을 찾아보세요.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#guides">가이드 둘러보기 <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="#question-tool">대화 질문 하나 받아보기</a>
         </div>
-        <div class="topic-strip"><span>오늘의 대화 주제</span><strong id="topic">첫 인상은 어떤 편인가요?</strong><button id="topic-button" aria-label="주제 바꾸기">↻</button></div>
-        <div class="messages" id="messages" aria-live="polite" aria-label="대화 내용">
-          <div class="welcome"><div class="welcome-icon">✉️</div><strong>새로운 대화를 시작해볼까요?</strong><span>아래 버튼을 눌러 랜덤 상대를 찾아보세요.</span></div>
-        </div>
-        <div class="typing" id="typing" hidden><span></span><span></span><span></span><small>상대가 입력 중이에요</small></div>
-        <form class="composer" id="message-form">
-          <input id="message-input" type="text" maxlength="300" placeholder="메시지를 입력하세요" autocomplete="off" disabled aria-label="메시지 입력">
-          <span class="char-count" id="char-count">0/300</span>
-          <button class="send-button" id="send-button" type="submit" disabled aria-label="메시지 보내기">↑</button>
-        </form>
-        <div class="chat-actions">
-          <button class="leave-button" id="leave-button" hidden>대화 나가기</button>
-          <button class="start-button" id="start-button"><span>✦</span> 랜덤 채팅 시작하기 <span class="arrow">→</span></button>
-        </div>
-        <div class="demo-caption" id="demo-caption">미리보기 데모 · 실제 사용자와 연결되지는 않아요</div>
-      </section>
-
-      <aside class="side-note">
-        <div class="tip-icon">💬</div><div><strong>대화가 어색할 땐</strong><p>오늘의 대화 주제로<br>자연스럽게 시작해보세요.</p></div>
-      </aside>
-    </main>
-    <section class="comments-section" id="comments" aria-labelledby="comments-title">
-      <div class="comments-heading">
-        <span class="comments-eyebrow">COMMUNITY</span>
-        <h2 id="comments-title">댓글</h2>
-        <p>이야기와 의견을 편하게 나눠보세요.</p>
       </div>
-      <div id="disqus_thread" aria-label="댓글"></div>
+      <aside class="question-card" id="question-tool" aria-labelledby="question-heading">
+        <div class="question-card-top"><span class="question-icon" aria-hidden="true">?</span><span class="eyebrow">오늘의 대화 연습</span></div>
+        <h2 id="question-heading">가벼운 질문 하나로<br>대화를 열어보세요.</h2>
+        <p class="question-prompt" id="question-prompt" aria-live="polite">요즘 하루 중 가장 기다려지는 순간은 언제인가요?</p>
+        <button class="button button-soft" id="new-question" type="button">다른 질문 보기 <span aria-hidden="true">↻</span></button>
+        <p class="question-note">상대가 편하게 답할 수 있는지 살피고, 답하기 싫어하는 질문은 건너뛰어도 괜찮아요.</p>
+      </aside>
+    </section>
+
+    <section class="intro-strip">
+      <div class="site-wrap intro-strip-inner">
+        <span class="section-mark" aria-hidden="true">01</span>
+        <div><h2>대화에는 하나의 정답이 없어요.</h2><p>상대와 맥락에 따라 같은 말도 다르게 들립니다. 이곳의 문장 예시는 시작점으로 삼고, 내 상황에 맞게 바꿔 사용해 주세요.</p></div>
+      </div>
+    </section>
+
+    <section class="section site-wrap" id="guides">
+      <div class="section-heading">
+        <div><p class="eyebrow">읽고 바로 써 보는 방법</p><h2>대화 가이드</h2></div>
+        <p>상황을 골라 읽고, 나에게 맞는 한 가지부터 연습해 보세요.</p>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card guide-card-feature">
+          <div class="card-meta"><span class="tag">처음 만났을 때</span><span>약 5분</span></div>
+          <h3><a href="first-conversation.html">처음 만난 사람과 대화를 편하게 이어가는 법</a></h3>
+          <p>무슨 말을 해야 할지 떠오르지 않을 때, 주변의 공통된 상황에서 시작해 질문과 내 이야기를 자연스럽게 주고받는 방법을 살펴봅니다.</p>
+          <a class="card-link" href="first-conversation.html">가이드 읽기 <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="guide-card">
+          <div class="card-meta"><span class="tag tag-green">잘 듣고 싶을 때</span><span>약 4분</span></div>
+          <h3><a href="active-listening.html">조언보다 먼저 건네는 경청의 말</a></h3>
+          <p>상대의 말을 서둘러 해결하려 하지 않고, 들은 내용을 확인하고 공감으로 답하는 작은 대화 습관을 정리했습니다.</p>
+          <a class="card-link" href="active-listening.html">가이드 읽기 <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="guide-card">
+          <div class="card-meta"><span class="tag tag-peach">선을 전하고 싶을 때</span><span>약 4분</span></div>
+          <h3><a href="kind-boundaries.html">미안함에 기대지 않고 다정하게 거절하기</a></h3>
+          <p>상대의 마음을 존중하면서도 내 의사를 흐리지 않는 거절의 순서와 상황별 문장 예시를 알아봅니다.</p>
+          <a class="card-link" href="kind-boundaries.html">가이드 읽기 <span aria-hidden="true">↗</span></a>
+        </article>
+        <article class="guide-card">
+          <div class="card-meta"><span class="tag tag-blue">마음을 표현할 때</span><span>약 5분</span></div>
+          <h3><a href="thoughtful-messages.html">고마움과 사과를 구체적으로 전하는 법</a></h3>
+          <p>막연한 “고마워”와 “미안해”에 내가 본 행동과 앞으로의 마음을 담아, 진심을 더 알아보기 쉽게 전합니다.</p>
+          <a class="card-link" href="thoughtful-messages.html">가이드 읽기 <span aria-hidden="true">↗</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="practice-band" id="practice">
+      <div class="site-wrap practice-inner">
+        <div><p class="eyebrow">작은 연습부터</p><h2>좋은 대화는 완벽한 문장보다<br>서로를 살피는 태도에서 시작돼요.</h2></div>
+        <ol class="practice-steps">
+          <li><span>1</span><div><strong>한 번에 하나씩 묻기</strong><p>질문을 이어 붙이기보다 답을 듣고 다음 말을 골라요.</p></div></li>
+          <li><span>2</span><div><strong>내 이야기도 조금 나누기</strong><p>질문과 짧은 자기 이야기를 번갈아 건네요.</p></div></li>
+          <li><span>3</span><div><strong>상대의 반응 살피기</strong><p>머뭇거림이 보이면 주제를 바꾸거나 잠시 쉬어요.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section site-wrap faq-section">
+      <div class="section-heading"><div><p class="eyebrow">처음 오셨나요?</p><h2>이 사이트 이용 안내</h2></div></div>
+      <div class="faq-grid">
+        <article><h3>문장을 그대로 써도 되나요?</h3><p>예시를 참고하되, 평소 말투와 실제 상황에 맞게 고쳐 쓰는 편이 자연스럽습니다. 상대가 불편해하면 대화를 멈춰 주세요.</p></article>
+        <article><h3>전문 상담을 제공하나요?</h3><p>아니요. 이 사이트는 일상 대화 연습을 위한 일반 정보와 문장 예시를 제공합니다. 상담·진단·위기 지원을 대신하지 않습니다.</p></article>
+        <article><h3>댓글과 문의는 어디서 하나요?</h3><p>페이지 아래 댓글 영역에서 의견을 나누거나, 푸터의 문의하기를 통해 운영자에게 메시지를 보낼 수 있습니다.</p></article>
+      </div>
+    </section>
+
+    <section class="comments-section site-wrap" id="comments" aria-labelledby="comments-title">
+      <div class="comments-heading"><p class="eyebrow">함께 나누는 이야기</p><h2 id="comments-title">댓글</h2><p>서로를 존중하는 말로 경험과 생각을 나눠 주세요. 댓글은 Disqus에서 제공되며 운영 정책에 따라 관리됩니다.</p></div>
+      <div id="disqus_thread"></div>
       <noscript>댓글을 보려면 JavaScript를 활성화해 주세요. <a href="https://disqus.com/?ref_noscript">Disqus 댓글</a></noscript>
     </section>
-    <footer><span>© 2026 두런두런</span><span><button id="partnership-button" type="button">제휴 문의</button><b>·</b><button id="safety-button">안전한 대화 안내</button><b>·</b><button id="privacy-button">개인정보 안내</button></span></footer>
-  </div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <dialog id="info-dialog"><button class="dialog-close" aria-label="닫기">×</button><div class="dialog-icon">🫶</div><h2 id="dialog-title">안전한 대화 안내</h2><p id="dialog-copy">개인정보나 연락처, 금융 정보를 공유하지 마세요. 불편한 대화는 언제든지 나가거나 신고할 수 있어요. 서로 존중하는 대화를 함께 만들어가요.</p><button class="dialog-ok">알겠어요</button></dialog>
-  <dialog id="partnership-dialog" aria-labelledby="partnership-title">
-    <button class="dialog-close partnership-close" type="button" aria-label="닫기">×</button>
-    <div class="dialog-icon">🤝</div>
-    <h2 id="partnership-title">제휴 문의</h2>
-    <p class="partnership-intro">두런두런과의 제휴를 제안해 주세요. 남겨주신 내용은 제휴 검토를 위해 전달됩니다.</p>
-    <form class="partnership-form" action="https://formspree.io/f/mzeeezrb" method="POST" target="_blank">
-      <input type="hidden" name="_subject" value="[두런두런] 새로운 제휴 문의">
-      <label for="partner-name">이름</label>
-      <input id="partner-name" name="name" type="text" autocomplete="name" maxlength="80" placeholder="홍길동" required>
-      <label for="partner-email">이메일</label>
-      <input id="partner-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required>
-      <label for="partner-company">회사 또는 서비스명 <span>(선택)</span></label>
-      <input id="partner-company" name="company" type="text" autocomplete="organization" maxlength="120" placeholder="회사/서비스 이름">
-      <label for="partner-message">제휴 내용</label>
-      <textarea id="partner-message" name="message" rows="4" maxlength="3000" placeholder="제휴 제안 내용을 적어주세요." required></textarea>
-      <button class="partnership-submit" type="submit">문의 보내기 <span aria-hidden="true">→</span></button>
-    </form>
-    <p class="partnership-privacy">입력한 정보는 제휴 문의 확인과 회신에 사용됩니다.</p>
-  </dialog>
+  </main>
+  <footer class="site-footer">
+    <div class="site-wrap footer-inner">
+      <div><a class="brand footer-brand" href="index.html"><span class="brand-mark">말</span><span>말의 여백</span></a><p>일상에서 나누는 대화를 위한 질문과 표현 안내서.</p></div>
+      <nav class="footer-nav" aria-label="사이트 정보"><a href="about.html">사이트 소개</a><a href="contact.html">문의하기</a><a href="privacy.html">개인정보 처리 안내</a><a href="#comments">댓글</a></nav>
+      <small>© 2026 말의 여백</small>
+    </div>
+  </footer>
   <script>
     var disqus_config = function () {
       this.page.url = 'https://product-builder-lecture-69r.pages.dev/';
@@ -100,6 +130,5 @@
       (d.head || d.body).appendChild(s);
     })();
   </script>
-  <script src="main.js"></script>
 </body>
 </html>
