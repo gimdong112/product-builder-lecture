@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ff">
+  <title>두런두런 — 랜덤 채팅</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="두런두런 홈"><span class="brand-mark">두</span><span>두런두런</span></a>
+      <div class="online"><i></i><span id="online-count">오늘도 누군가 기다리고 있어요</span></div>
+      <button class="icon-button" id="help-button" aria-label="안내 보기">?</button>
+    </header>
+
+    <main class="layout">
+      <section class="intro">
+        <div class="eyebrow"><span class="sparkle">✦</span> 낯선 사람과 가볍게 나누는 대화</div>
+        <h1>오늘, 누구와<br><em>두런두런</em> 이야기할까요?</h1>
+        <p>관심사가 비슷한 새로운 친구를 만나보세요.<br>부담 없이 인사부터 시작해도 괜찮아요.</p>
+        <div class="safe-note"><span>♡</span> 서로를 존중하는 대화를 부탁드려요</div>
+      </section>
+
+      <section class="chat-card" aria-label="랜덤 채팅">
+        <div class="chat-head">
+          <div class="partner">
+            <div class="avatar" id="avatar">☁️</div>
+            <div><strong id="partner-name">새로운 인연</strong><small id="partner-status">아직 연결되지 않았어요</small></div>
+          </div>
+          <button class="more-button" id="report-button" aria-label="신고 또는 차단" title="신고 / 차단">•••</button>
+        </div>
+        <div class="topic-strip"><span>오늘의 대화 주제</span><strong id="topic">첫 인상은 어떤 편인가요?</strong><button id="topic-button" aria-label="주제 바꾸기">↻</button></div>
+        <div class="messages" id="messages" aria-live="polite" aria-label="대화 내용">
+          <div class="welcome"><div class="welcome-icon">✉️</div><strong>새로운 대화를 시작해볼까요?</strong><span>아래 버튼을 눌러 랜덤 상대를 찾아보세요.</span></div>
+        </div>
+        <div class="typing" id="typing" hidden><span></span><span></span><span></span><small>상대가 입력 중이에요</small></div>
+        <form class="composer" id="message-form">
+          <input id="message-input" type="text" maxlength="300" placeholder="메시지를 입력하세요" autocomplete="off" disabled aria-label="메시지 입력">
+          <span class="char-count" id="char-count">0/300</span>
+          <button class="send-button" id="send-button" type="submit" disabled aria-label="메시지 보내기">↑</button>
+        </form>
+        <div class="chat-actions">
+          <button class="leave-button" id="leave-button" hidden>대화 나가기</button>
+          <button class="start-button" id="start-button"><span>✦</span> 랜덤 채팅 시작하기 <span class="arrow">→</span></button>
+        </div>
+        <div class="demo-caption" id="demo-caption">미리보기 데모 · 실제 사용자와 연결되지는 않아요</div>
+      </section>
+
+      <aside class="side-note">
+        <div class="tip-icon">💬</div><div><strong>대화가 어색할 땐</strong><p>오늘의 대화 주제로<br>자연스럽게 시작해보세요.</p></div>
+      </aside>
+    </main>
+    <footer><span>© 2026 두런두런</span><span><button id="safety-button">안전한 대화 안내</button><b>·</b><button id="privacy-button">개인정보 안내</button></span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="info-dialog"><button class="dialog-close" aria-label="닫기">×</button><div class="dialog-icon">🫶</div><h2 id="dialog-title">안전한 대화 안내</h2><p id="dialog-copy">개인정보나 연락처, 금융 정보를 공유하지 마세요. 불편한 대화는 언제든지 나가거나 신고할 수 있어요. 서로 존중하는 대화를 함께 만들어가요.</p><button class="dialog-ok">알겠어요</button></dialog>
+  <script src="main.js"></script>
+</body>
+</html>
