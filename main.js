@@ -1,4 +1,21 @@
 const $ = (selector) => document.querySelector(selector);
+const themeToggle = $('#theme-toggle');
+const savedTheme = localStorage.getItem('du런-theme');
+const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const isDark = theme === 'dark';
+  themeToggle.innerHTML = '<span aria-hidden="true">' + (isDark ? '☀' : '☾') + '</span>';
+  themeToggle.setAttribute('aria-label', isDark ? '화이트 모드로 전환' : '다크 모드로 전환');
+  themeToggle.title = isDark ? '화이트 모드로 전환' : '다크 모드로 전환';
+  document.querySelector('meta[name="theme-color"]').content = isDark ? '#171620' : '#f5f4ff';
+}
+setTheme(savedTheme || preferredTheme);
+themeToggle.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('du런-theme', nextTheme);
+  setTheme(nextTheme);
+});
 const topics = ['첫 인상은 어떤 편인가요?', '요즘 푹 빠진 취미가 있나요?', '오늘 하루를 한 단어로 표현한다면?', '다시 가고 싶은 여행지가 있나요?', '요즘 가장 자주 듣는 노래는?', '쉬는 날엔 보통 뭘 하세요?'];
 const replies = ['오, 그 얘기 더 듣고 싶어요!', '좋네요 :) 요즘 어떻게 지내세요?', '저도 비슷한 생각 해본 적 있어요.', '재밌다! 그럼 요즘 가장 좋았던 순간은 뭐예요?', '그렇군요. 오늘의 주제에도 딱 맞는 이야기네요!'];
 let connected = false;
