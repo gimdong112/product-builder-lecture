@@ -25,3 +25,20 @@ html[data-theme="dark"] footer button{color:#b0adc0}
 html[data-theme="dark"] dialog{background:#242230;color:#eeedf7}
 html[data-theme="dark"] dialog p{color:#b7b4c7}
 html[data-theme="dark"] .dialog-close{color:#b7b4c7}
+#partnership-dialog{width:min(520px,calc(100% - 32px));max-height:min(90vh,820px);overflow:auto;text-align:left;padding:30px}
+#partnership-dialog .dialog-icon,#partnership-dialog h2{text-align:center}
+#partnership-dialog .partnership-intro{text-align:center;margin-bottom:18px}
+.partnership-form{display:flex;flex-direction:column;gap:8px}
+.partnership-form label{font-size:12px;font-weight:700;color:#5b596e;margin-top:5px}
+.partnership-form label span{font-weight:400;color:#aaa8b8}
+.partnership-form input,.partnership-form textarea{width:100%;border:1px solid #e8e6ef;border-radius:10px;padding:11px 12px;background:#fbfaff;color:#343248;font:inherit;font-size:13px;outline:none}
+.partnership-form input:focus,.partnership-form textarea:focus{border-color:#948bea;box-shadow:0 0 0 3px #766ce511}
+.partnership-form textarea{resize:vertical;min-height:110px;line-height:1.6}
+.partnership-form input::placeholder,.partnership-form textarea::placeholder{color:#aaa8b8}
+.partnership-submit{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:9px;min-height:44px;border:0;border-radius:11px;background:#746be5;color:#fff;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.partnership-submit:hover{background:#655bd8}
+#partnership-dialog .partnership-privacy{text-align:center;font-size:10px;margin:12px 0 0;color:#aaa8b8}
+html[data-theme="dark"] .partnership-form label{color:#d1cedd}
+html[data-theme="dark"] .partnership-form input,html[data-theme="dark"] .partnership-form textarea{border-color:#393747;background:#1b1925;color:#f0eff8}
+html[data-theme="dark"] .partnership-form input::placeholder,html[data-theme="dark"] .partnership-form textarea::placeholder{color:#88869a}
+@media(max-width:700px){#partnership-dialog{padding:25px 20px}}
