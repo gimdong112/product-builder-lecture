@@ -75,3 +75,10 @@ $('#safety-button').addEventListener('click', () => showDialog('안전한 대화
 $('#privacy-button').addEventListener('click', () => showDialog('개인정보 안내', '이 데모는 입력한 메시지를 서버로 전송하거나 저장하지 않아요. 실제 서비스를 운영하려면 개인정보 처리 방침과 안전한 서버 구성이 필요해요.'));
 $('.dialog-close').addEventListener('click', () => dialog.close()); $('.dialog-ok').addEventListener('click', () => dialog.close());
 $('#report-button').addEventListener('click', () => showDialog('신고 및 차단', '현재는 화면 미리보기라 실제 신고 접수가 되지 않아요. 실제 서비스에서는 상대를 차단하고 운영자에게 신고할 수 있도록 연결해야 해요.'));
+
+const partnershipDialog = $('#partnership-dialog');
+$('#partnership-button').addEventListener('click', () => partnershipDialog.showModal());
+$('.partnership-close').addEventListener('click', () => partnershipDialog.close());
+partnershipDialog.addEventListener('click', (event) => {
+  if (event.target === partnershipDialog) partnershipDialog.close();
+});
