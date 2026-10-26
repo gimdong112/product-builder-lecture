@@ -52,6 +52,15 @@
         <div class="tip-icon">💬</div><div><strong>대화가 어색할 땐</strong><p>오늘의 대화 주제로<br>자연스럽게 시작해보세요.</p></div>
       </aside>
     </main>
+    <section class="comments-section" id="comments" aria-labelledby="comments-title">
+      <div class="comments-heading">
+        <span class="comments-eyebrow">COMMUNITY</span>
+        <h2 id="comments-title">댓글</h2>
+        <p>이야기와 의견을 편하게 나눠보세요.</p>
+      </div>
+      <div id="disqus_thread" aria-label="댓글"></div>
+      <noscript>댓글을 보려면 JavaScript를 활성화해 주세요. <a href="https://disqus.com/?ref_noscript">Disqus 댓글</a></noscript>
+    </section>
     <footer><span>© 2026 두런두런</span><span><button id="partnership-button" type="button">제휴 문의</button><b>·</b><button id="safety-button">안전한 대화 안내</button><b>·</b><button id="privacy-button">개인정보 안내</button></span></footer>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -74,6 +83,19 @@
       <button class="partnership-submit" type="submit">문의 보내기 <span aria-hidden="true">→</span></button>
     </form>
     <p class="partnership-privacy">입력한 정보는 제휴 문의 확인과 회신에 사용됩니다.</p>
-  </dialog>  <script src="main.js"></script>
+  </dialog>
+  <script>
+    var disqus_config = function () {
+      this.page.url = 'https://product-builder-lecture-69r.pages.dev/';
+      this.page.identifier = 'product-builder-lecture-home';
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://productbuilder-fve48pzvuz.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <script src="main.js"></script>
 </body>
 </html>
