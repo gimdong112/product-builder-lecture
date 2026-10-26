@@ -42,3 +42,14 @@ html[data-theme="dark"] .partnership-form label{color:#d1cedd}
 html[data-theme="dark"] .partnership-form input,html[data-theme="dark"] .partnership-form textarea{border-color:#393747;background:#1b1925;color:#f0eff8}
 html[data-theme="dark"] .partnership-form input::placeholder,html[data-theme="dark"] .partnership-form textarea::placeholder{color:#88869a}
 @media(max-width:700px){#partnership-dialog{padding:25px 20px}}
+.comments-section{width:min(760px,100%);margin:0 auto 42px;padding:32px 0;border-top:1px solid #e9e7f1}
+.comments-heading{margin-bottom:22px}
+.comments-eyebrow{font-size:10px;font-weight:700;letter-spacing:1.3px;color:#8178d6}
+.comments-heading h2{font-size:23px;letter-spacing:-.6px;margin:6px 0}
+.comments-heading p{font-size:12px;color:#858397;margin:0}
+#disqus_thread{min-height:180px}
+.comments-section noscript{font-size:12px;color:#858397}
+.comments-section noscript a{color:#746be5}
+html[data-theme="dark"] .comments-section{border-color:#302e3d}
+html[data-theme="dark"] .comments-heading p,html[data-theme="dark"] .comments-section noscript{color:#aaa8bb}
+@media(max-width:700px){.comments-section{margin-bottom:28px;padding:26px 2px}.comments-heading h2{font-size:21px}}
